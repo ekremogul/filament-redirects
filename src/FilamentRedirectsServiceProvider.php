@@ -17,6 +17,7 @@ class FilamentRedirectsServiceProvider extends PluginServiceProvider
     public function configurePackage(Package $package): void
     {
         $this->packageConfiguring($package);
+        $this->loadJsonTranslationsFrom(__DIR__ . '/resources/lang');
 
         $package
             ->name(static::$name)
