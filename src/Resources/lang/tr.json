@@ -1,0 +1,16 @@
+{
+    "/my-old-path": "/eski-url-adresi",
+    "/my-new-path": "/yeni-url-adresi",
+    "301 - Permanent": "301 - Kalıcı Yönlendirme",
+    "302 - Temporary": "302 - Geçici Yönlendirme",
+    "303 - Temporary": "303 - Geçici Yönlendirme",
+    "307 - Temporary": "307 - Geçici Yönlendirme",
+    "308 - Permanent": "308 - Kalıcı Yönlendirme",
+    "Source": "Kaynak",
+    "Destination": "Hedef",
+    "Status code": "Durum kodu",
+    "Enabled": "Etkin",
+    "Delete": "Sil",
+    "Redirects": "Yönlendirmeler",
+    "Redirect": "Yönlendirme"
+}

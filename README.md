@@ -10,9 +10,12 @@ You can install the package via composer:
 composer require ekremogul/filament-redirects
 ```
 
-Register the middleware within the `web` middleware group array inside of `App/Http/Kernel.php`
+Register the middleware within the `$middleware` middleware group array inside of `App/Http/Kernel.php`
 ```php
-\Ekremogul\FilamentRedirects\Middleware\RedirectMiddleware::class
+protected $middleware = [
+        ...
+        \Ekremogul\FilamentRedirects\Middleware\RedirectMiddleware::class
+    ];
 ```
 
 You can publish and run the migrations with:
