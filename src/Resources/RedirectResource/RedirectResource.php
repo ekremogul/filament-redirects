@@ -2,6 +2,7 @@
 
 namespace Ekremogul\FilamentRedirects\Resources\RedirectResource;
 
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -41,31 +42,34 @@ class RedirectResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('source')
-                    ->translateLabel()
-                    ->placeholder(__('/my-old-path'))
-                    ->unique(ignorable: fn (?Redirect $record): ?Redirect => $record)
-                    ->required(),
-                TextInput::make('destination')
-                    ->translateLabel()
-                    ->placeholder(__('/my-new-path'))
-                    ->required(),
-                Select::make('status_code')
-                    ->translateLabel()
-                    ->options([
-                        '301' => __('301 - Permanent'),
-                        '302' => __('302 - Temporary'),
-                        '303' => __('303 - Temporary'),
-                        '307' => __('307 - Temporary'),
-                        '308' => __('308 - Permanent'),
-                    ])
-                    ->required(),
-                Toggle::make('enabled')
-                    ->translateLabel()
-                    ->default(true)
-                    ->inline(false)
-                    ->offIcon('heroicon-s-x')
-                    ->onIcon('heroicon-s-check'),
+                Card::make()
+                    ->schema([
+                        TextInput::make('source')
+                            ->translateLabel()
+                            ->placeholder(__('/my-old-path'))
+                            ->unique(ignorable: fn (?Redirect $record): ?Redirect => $record)
+                            ->required(),
+                        TextInput::make('destination')
+                            ->translateLabel()
+                            ->placeholder(__('/my-new-path'))
+                            ->required(),
+                        Select::make('status_code')
+                            ->translateLabel()
+                            ->options([
+                                '301' => __('301 - Permanent'),
+                                '302' => __('302 - Temporary'),
+                                '303' => __('303 - Temporary'),
+                                '307' => __('307 - Temporary'),
+                                '308' => __('308 - Permanent'),
+                            ])
+                            ->required(),
+                        Toggle::make('enabled')
+                            ->translateLabel()
+                            ->default(true)
+                            ->inline(false)
+                            ->offIcon('heroicon-s-x')
+                            ->onIcon('heroicon-s-check'),
+                    ])->inlineLabel()
             ]);
     }
 
