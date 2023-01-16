@@ -1,0 +1,43 @@
+{
+    "name": "ekremogul/filament-redirects",
+    "description": "A Filament resource to create and maintain page redirects for your website.",
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^2.10"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ekremogul\\FilamentRedirects\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ekrem OĞUL",
+            "email": "ekremogul@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ekremogul\\FilamentRedirects\\FilamentRedirectsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "fix": [
+            "vendor/bin/php-cs-fixer fix"
+        ],
+        "dry-fix": [
+            "vendor/bin/php-cs-fixer --using-cache=no --diff --dry-run fix"
+        ]
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
