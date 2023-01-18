@@ -10,8 +10,6 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables\Actions\Action;
-use Filament\Tables\Actions\LinkAction;
-use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Ekremogul\FilamentRedirects\Models\Redirect;
@@ -24,6 +22,11 @@ class RedirectResource extends Resource
     protected static ?string $model = Redirect::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-switch-horizontal';
+
+    protected static function getNavigationGroup(): ?string
+    {
+        return __(config('filament-redirects.navigation_group'));
+    }
 
     public static function getLabel(): ?string
     {

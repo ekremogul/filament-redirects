@@ -22,6 +22,7 @@ class FilamentRedirectsServiceProvider extends PluginServiceProvider
         $package
             ->name(static::$name)
             ->hasCommands($this->getCommands())
+            ->hasConfigFile('filament-redirects')
             ->hasMigration('create_redirects_table');
 
         $this->packageConfigured($package);
